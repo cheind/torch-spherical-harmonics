@@ -8,10 +8,10 @@ from torchsh.symbolic.codegen import compile_sh_fn
 
 
 def test_compile_fn():
-    rsh_fn = compile_sh_fn(order=4)
+    rsh_fn = compile_sh_fn(degree=4)
     assert rsh_fn(torch.randn(10, 5, 3)).shape == (10, 5, 16)
 
-    rsh_fn = compile_sh_fn(order=4, start=1)
+    rsh_fn = compile_sh_fn(degree=4, start=1)
     assert rsh_fn(torch.randn(10, 5, 3)).shape == (10, 5, 15)
 
     # rsh_fn = compile_sh_fn(order=8)
@@ -37,7 +37,7 @@ def test_compare_compiled_ref():
         -1,
     )
 
-    rsh_fn = compile_sh_fn(order=4)
+    rsh_fn = compile_sh_fn(degree=4)
     sh = rsh_fn(torch.tensor(xyz))
     idx = 1
     for n in range(1, 4):

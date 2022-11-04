@@ -51,24 +51,24 @@ def _substitute(f: sym.Expr) -> sym.Expr:
     return f.subs(_subs)
 
 
-def generate_sh_fn_str(order: int = 4, start: int = 0) -> str:
+def generate_sh_fn_str(degree: int = 4, start: int = 0) -> str:
     """Returns the source code for `rsh_cart` method defined up to given order."""
 
     ynms = []
-    for n in range(start, order):
+    for n in range(start, degree):
         for m in range(-n, n + 1):
             ylm = Ylm(n, m, x, y, z)
             ylmstr = sym.pycode(_substitute(sym.N(ylm)))
             if n == 0:
                 ylmstr = f"xyz.new_tensor({ylmstr}).expand(xyz.shape[:-1])"
             ynms.append(ylmstr)
-    return code_tpl.format(order=order, ynms=",".join(ynms))
+    return code_tpl.format(order=degree, ynms=",".join(ynms))
 
 
 def compile_sh_fn(
-    order: int = 4, start: int = 0
+    degree: int = 4, start: int = 0
 ) -> Callable[[torch.Tensor], torch.Tensor]:
-    source = generate_sh_fn_str(order=order, start=start)
+    source = generate_sh_fn_str(degree=degree, start=start)
     ctx = {}
     exec(source, ctx)
-    return ctx[f"rsh_cart_{order}"]
+    return ctx[f"rsh_cart_{degree}"]
