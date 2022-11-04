@@ -26,7 +26,7 @@ def test_symbolic_rsh(n: int, m: int):
 
     theta_np = np.linspace(0, np.pi, 50)
     phi_np = np.linspace(0, 2 * np.pi, 50)
-    theta_np, phi_np = np.meshgrid(theta_np, phi_np, indexing="xy")
+    theta_np, phi_np = np.meshgrid(theta_np, phi_np, indexing="ij")
     xyz = np.stack(
         [
             np.sin(theta_np) * np.cos(phi_np),

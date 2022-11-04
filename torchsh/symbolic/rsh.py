@@ -1,7 +1,8 @@
 """Symbolic real spherical harmonic basis functions.
 
 Methods in this module generate symbolic expressions for
-real spherical harmonics in Cartesian form
+real spherical harmonic functions of degree n and order m 
+in Cartesian form:
     Ynm: R^3 -> R
          x,y,z -> Ynm(x,y,z)
 
@@ -56,7 +57,6 @@ def P(n: int, m: int, z: sym.Symbol) -> sym.Expr:
     gamma = phase * 2 ** (-n) * sym.binomial(n, k) * sym.binomial(2 * n - 2 * k, n)
     gamma = gamma * sym.factorial((n - 2 * k)) / sym.factorial(n - 2 * k - m)
     f = gamma * z ** (n - 2 * k - m)
-
     upper = int(math.floor((n - m) / 2))
     return scale * sym.Sum(f, (k, 0, upper))
 
@@ -72,3 +72,10 @@ def Ylm(n: int, m: int, x: sym.Symbol, y: sym.Symbol, z: sym.Symbol) -> sym.Expr
     else:
         f = sym.sqrt((2 * n + 1) / (2 * sym.pi)) * P(n, m, z) * A(m, x, y)
     return f.doit().simplify()
+
+
+if __name__ == "__main__":
+
+    ylm = Ylm(1, -1, x, y, z)
+    print(y)
+    print((ylm - (sym.sqrt(3 / (4 * sym.pi)) * y)).simplify())
