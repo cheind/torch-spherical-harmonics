@@ -4,38 +4,16 @@
 #
 #    pip-compile requirements.in
 #
-contourpy==1.0.6
-    # via matplotlib
-cycler==0.11.0
-    # via matplotlib
-fonttools==4.38.0
-    # via matplotlib
-kiwisolver==1.4.4
-    # via matplotlib
-matplotlib==3.6.2
-    # via -r requirements.in
-mpmath==1.2.1
-    # via sympy
-numpy==1.23.4
-    # via
-    #   -r requirements.in
-    #   contourpy
-    #   matplotlib
-packaging==21.3
-    # via matplotlib
-pillow==9.3.0
-    # via matplotlib
-pyparsing==3.0.9
-    # via
-    #   matplotlib
-    #   packaging
-python-dateutil==2.8.2
-    # via matplotlib
-six==1.16.0
-    # via python-dateutil
-sympy==1.11.1
-    # via -r requirements.in
-torch==1.13.0
+--extra-index-url https://download.pytorch.org/whl/cu113
+--trusted-host pypi.python.org
+--trusted-host pypi.org
+--trusted-host files.pythonhosted.org
+--trusted-host raw.githubusercontent.com
+--trusted-host github.com
+--trusted-host download.pytorch.org
+--trusted-host gitlab.profactor.at
+
+torch==1.12.1+cu113
     # via -r requirements.in
 typing-extensions==4.4.0
     # via torch

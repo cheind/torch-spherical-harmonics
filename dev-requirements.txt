@@ -4,62 +4,56 @@
 #
 #    pip-compile dev-requirements.in
 #
+--extra-index-url https://download.pytorch.org/whl/cu113
+--trusted-host pypi.python.org
+--trusted-host pypi.org
+--trusted-host files.pythonhosted.org
+--trusted-host raw.githubusercontent.com
+--trusted-host github.com
+--trusted-host download.pytorch.org
+--trusted-host gitlab.profactor.at
+
 attrs==22.1.0
     # via pytest
 black==22.10.0
     # via -r dev-requirements.in
 click==8.1.3
     # via black
-colorama==0.4.6
-    # via pytest
 contourpy==1.0.6
-    # via
-    #   -r requirements.txt
-    #   matplotlib
+    # via matplotlib
 cycler==0.11.0
-    # via
-    #   -r requirements.txt
-    #   matplotlib
+    # via matplotlib
 exceptiongroup==1.0.0
     # via pytest
 flake8==5.0.4
     # via -r dev-requirements.in
 fonttools==4.38.0
-    # via
-    #   -r requirements.txt
-    #   matplotlib
+    # via matplotlib
 iniconfig==1.1.1
     # via pytest
 kiwisolver==1.4.4
-    # via
-    #   -r requirements.txt
-    #   matplotlib
+    # via matplotlib
 matplotlib==3.6.2
-    # via -r requirements.txt
+    # via -r dev-requirements.in
 mccabe==0.7.0
     # via flake8
 mpmath==1.2.1
-    # via
-    #   -r requirements.txt
-    #   sympy
+    # via sympy
 mypy-extensions==0.4.3
     # via black
 numpy==1.23.4
     # via
-    #   -r requirements.txt
+    #   -r dev-requirements.in
     #   contourpy
     #   matplotlib
 packaging==21.3
     # via
-    #   -r requirements.txt
     #   matplotlib
     #   pytest
 pathspec==0.10.1
     # via black
 pillow==9.3.0
-    # via
-    #   -r requirements.txt
-    #   matplotlib
+    # via matplotlib
 platformdirs==2.5.2
     # via black
 pluggy==1.0.0
@@ -70,26 +64,21 @@ pyflakes==2.5.0
     # via flake8
 pyparsing==3.0.9
     # via
-    #   -r requirements.txt
     #   matplotlib
     #   packaging
 pytest==7.2.0
     # via -r dev-requirements.in
 python-dateutil==2.8.2
-    # via
-    #   -r requirements.txt
-    #   matplotlib
+    # via matplotlib
 six==1.16.0
-    # via
-    #   -r requirements.txt
-    #   python-dateutil
+    # via python-dateutil
 sympy==1.11.1
-    # via -r requirements.txt
+    # via -r dev-requirements.in
 tomli==2.0.1
     # via
     #   black
     #   pytest
-torch==1.13.0
+torch==1.12.1+cu113
     # via -r requirements.txt
 typing-extensions==4.4.0
     # via
