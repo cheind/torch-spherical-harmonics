@@ -2,4 +2,4 @@
 
 Fast real spherical harmonics (RSH) for PyTorch using Cartesian form. PyTorch code is generated via symbolic RSH expressions.
 
-![](etc/rsph_theta_phi.svg?raw=true&sanitize=true)
+![](etc/rsph_theta_phi.png?raw=true)
