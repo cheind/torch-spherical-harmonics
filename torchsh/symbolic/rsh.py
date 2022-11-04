@@ -57,7 +57,7 @@ def P(n: int, m: int, z: sym.Symbol) -> sym.Expr:
 
 def Ylm(n: int, m: int, x: sym.Symbol, y: sym.Symbol, z: sym.Symbol) -> sym.Expr:
     """Return a symbolic expression for the real spherical
-    harmonics at degree `l` and index `m`."""
+    harmonics having degree `l` and order `m`."""
     assert abs(m) <= n
     if m < 0:
         f = sym.sqrt((2 * n + 1) / (2 * sym.pi)) * P(n, abs(m), z) * B(abs(m), x, y)
