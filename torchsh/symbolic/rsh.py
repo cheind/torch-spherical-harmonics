@@ -20,7 +20,13 @@ References:
 """
 
 
-import sympy as sym
+try:
+    import sympy as sym
+except ImportError:
+    raise Exception(
+        "Failed to import sympy. You need `pip install sympy` for this part of the"
+        " code."
+    )
 import math
 
 

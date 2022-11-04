@@ -1,5 +1,19 @@
 from typing import Callable
 
+
+try:
+    import sympy as sym
+except ImportError:
+    raise Exception(
+        "Failed to import sympy\n. You need `pip install sympy` for this part of the"
+        " code."
+    )
+
+
+class RenderLaTeX(object):
+    pass
+
+
 import sympy as sym
 import torch
 
