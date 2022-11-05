@@ -1,7 +1,7 @@
 """Symbolic real spherical harmonic basis functions.
 
 Methods in this module generate symbolic expressions for
-real spherical harmonic functions of degree n and order m 
+real spherical harmonic functions of degree n and order m
 in Cartesian form:
     Ynm: R^3 -> R
          x,y,z -> Ynm(x,y,z)

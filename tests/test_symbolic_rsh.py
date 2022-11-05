@@ -1,6 +1,4 @@
 import pytest
-import torch
-import math
 import sympy as sym
 import numpy as np
 from numpy.testing import assert_allclose

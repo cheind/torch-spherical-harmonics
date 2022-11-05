@@ -5,7 +5,7 @@ import torch
 from itertools import count
 
 # The following import configures Matplotlib for 3D plotting.
-from torchsh.symbolic.codegen import compile_file
+from torchsh.symbolic.codegen import compile_fn
 
 # Degree to generate
 DEGREE = 6
@@ -50,7 +50,7 @@ def main():
     )
 
     # Compile our torch harmonics function
-    rsh_fn = compile_file(degree=DEGREE)
+    rsh_fn = compile_fn(degree=DEGREE)
     # Eval with cartesian coords
     Y = rsh_fn(xyz)
 

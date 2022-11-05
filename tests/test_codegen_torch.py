@@ -1,21 +1,25 @@
-import math
+import pytest
 import torch
 import sympy as sym
 import numpy as np
 from numpy.testing import assert_allclose
 
-from torchsh.symbolic.codegen import compile_file
+from torchsh.symbolic.codegen import compile_fn
+
+from torchsh import rsh
 
 
 def test_compile_fn():
-    rsh_fn = compile_file(degree=4)
+    rsh_fn = compile_fn(degree=3)
     assert rsh_fn(torch.randn(10, 5, 3)).shape == (10, 5, 16)
 
     # rsh_fn = compile_sh_fn(order=8)
     # assert rsh_fn(torch.randn(10, 5, 3)).shape == (10, 5, 64)
 
 
-def test_compare_compiled_ref():
+@pytest.mark.parametrize("compile", [True, False])
+@pytest.mark.parametrize("degree", [0, 1, 2, 3, 4, 5, 6, 7, 8])
+def test_compare_compiled_ref(compile, degree):
     # Numeric eval of Ynm
     theta, phi = sym.symbols("theta, phi")
 
@@ -33,12 +37,17 @@ def test_compare_compiled_ref():
         ],
         -1,
     )
-
-    rsh_fn = compile_file(degree=4)
+    # If compile, we actually test the current state of codegen
+    # Otherwise we test the pre-compiled functions
+    if compile:
+        rsh_fn = compile_fn(degree=degree)
+    else:
+        rsh_fn = getattr(rsh, f"rsh_cart_{degree}")
     sh = rsh_fn(torch.tensor(xyz))
-    idx = 1
-    for n in range(1, 4):
+    idx = 1  # We skip coefficient 0, since Znm does not return a array in this case
+    for n in range(1, degree + 1):
         for m in range(-n, n + 1):
+            print(n, m)
             npf_ref = sym.utilities.lambdify(
                 (theta, phi),
                 sym.Znm(n, m, theta, phi).expand(func=True),
