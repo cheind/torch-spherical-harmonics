@@ -4,15 +4,12 @@ import sympy as sym
 import numpy as np
 from numpy.testing import assert_allclose
 
-from torchsh.symbolic.codegen import compile_sh_fn
+from torchsh.symbolic.codegen import compile_file
 
 
 def test_compile_fn():
-    rsh_fn = compile_sh_fn(degree=4)
+    rsh_fn = compile_file(degree=4)
     assert rsh_fn(torch.randn(10, 5, 3)).shape == (10, 5, 16)
-
-    rsh_fn = compile_sh_fn(degree=4, start=1)
-    assert rsh_fn(torch.randn(10, 5, 3)).shape == (10, 5, 15)
 
     # rsh_fn = compile_sh_fn(order=8)
     # assert rsh_fn(torch.randn(10, 5, 3)).shape == (10, 5, 64)
@@ -37,7 +34,7 @@ def test_compare_compiled_ref():
         -1,
     )
 
-    rsh_fn = compile_sh_fn(degree=4)
+    rsh_fn = compile_file(degree=4)
     sh = rsh_fn(torch.tensor(xyz))
     idx = 1
     for n in range(1, 4):
