@@ -86,6 +86,12 @@ def rsh_cart_${degree}(xyz:torch.Tensor):
         ,-1
     )
 % endfor
+
+__all__ = [
+% for degree in degrees:
+    'rsh_cart_${degree}',
+% endfor
+]
 """
 
 
