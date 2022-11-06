@@ -56,7 +56,6 @@ def main():
     Y = rsh_fn(xyz)
 
     # Setup the figure and grid
-
     fig = plt.figure(figsize=(21, 11), dpi=100)
     ncols = 2 * DEGREE + 1
     spec = gridspec.GridSpec(
@@ -68,6 +67,7 @@ def main():
         width_ratios=[1.0] * ncols + [0.1],
     )
 
+    # Plot
     idx = count()
     for n in range(DEGREE):
         for m in range(-n, n + 1):
