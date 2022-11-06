@@ -28,10 +28,11 @@ def plot_Y_theta_phi(ax, Y: torch.Tensor, n: int, m: int, index: int):
     ax.set_xticklabels([r"$0$", r"$2\pi$"], fontsize=6)
     ax.set_yticks([0, np.pi])
     ax.set_yticklabels([r"$0$", r"$\pi$"], fontsize=6)
-    if m > 0:
-        ax.set_title(f"$Y_{{{n}{{,}}{m}}}$", fontsize=10)
+    if m >= 0:
+        title_str = f"$Y_{{{n}{{,}}{m}}}$"
     else:
-        ax.set_title(f"$Y_{{{n}{{,}}{{-}}{abs(m)}}}$", fontsize=10)
+        title_str = f"$Y_{{{n}{{,}}{{-}}{abs(m)}}}$"
+    ax.set_title(title_str, fontsize=10)
     return img
 
 
