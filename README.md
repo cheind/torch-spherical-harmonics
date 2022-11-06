@@ -7,7 +7,7 @@ The following plot shows the first real spherical harmonics $Y_{nm}$ of degree $
 
 ## Usage
 
-To use the pre-generated RSH function to generate all $Ynm$ up to and including degree 3 use:
+To compute all $Y_{nm}$ values up to degree 3 use:
 
 ```python
 
@@ -18,7 +18,9 @@ xyz = ... # tensor (N,...,3) of points on the unit-sphere
 sh = torchsh.rsh_cart_3(xyz) # tensor (N,...,16) of Ynm
 ```
 
-`torchsh` contains generated RSH functions up to degree 8 with the naming convention `rsh_cart_{degree}`. If you do not want to include a new library, you may just as well just include [`torchsh/rsh.py`](./torchsh/rsh.py) in your project, which requires only `torch` to be installed.
+This relies on pre-generated RSH functions, which `torchsh` contains up to degree 8. They follow the the naming convention `rsh_cart_{degree}`.
+
+If you do not want to include a new library, you may just as well just include [`torchsh/rsh.py`](./torchsh/rsh.py) in your project, which requires only `torch` to be installed.
 
 ## Code Generation
 
