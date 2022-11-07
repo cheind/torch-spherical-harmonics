@@ -21,9 +21,9 @@ $$
 
 and
 
-```math
+$$
 \left\lVert \frac{\partial\mathbf{r}}{\partial\theta} \times \frac{\partial\mathbf{r}}{\partial\phi} \right\lVert = \sin\theta.
-```
+$$
 
 ## Usage
 
