@@ -9,9 +9,9 @@ The following plot shows the first real spherical harmonics $Y_{nm}$ of degree $
 
 The RSH functions provided in this package are ortho-normalized over the surface of the unit sphere. That is
 
-```math
+$$
 \int\limits_0^\pi\int\limits_0^{2\pi}Y_{nm}(\mathbf r(\theta,\phi))Y_{n'm'}(\mathbf r(\theta,\phi)) \left\lVert	 \frac{\partial\mathbf{r}}{\partial\theta}\times\frac{\partial\mathbf{r}}{\partial\phi} \right\rVert \thinspace d \phi \thinspace d \theta = \delta_{ll'}\delta_{mm'},
-```
+$$
 
 with
 
@@ -21,9 +21,9 @@ $$
 
 and
 
-$$
-\left\lVert \frac{\partial\mathbf{r}}{\partial\theta}\times\frac{\partial\mathbf{r}}{\partial\phi} \right\lVert = \sin\theta.
-$$
+```math
+\left\lVert \frac{\partial\mathbf{r}}{\partial\theta} \times \frac{\partial\mathbf{r}}{\partial\phi} \right\lVert = \sin\theta.
+```
 
 ## Usage
 
