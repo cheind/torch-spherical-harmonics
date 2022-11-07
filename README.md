@@ -16,7 +16,7 @@ $$
 with
 
 $$
-\mathbf r(\theta,\phi) = \sin\theta\cos\phi\mathbf{i} + \sin\theta\sin\phi\mathbf{j} + \cos\theta\mathbf{k},
+\mathbf r(\theta,\phi) = \sin\theta\cos\phi\mathbf{\hat i} + \sin\theta\sin\phi\mathbf{\hat j} + \cos\theta\mathbf{\hat k},
 $$
 
 and
