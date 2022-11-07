@@ -22,8 +22,8 @@ def plot_Y_theta_phi(ax, Y: torch.Tensor, n: int, m: int, index: int):
         cmap="bwr",
     )
     img.set_clim(-0.5, 0.5)
-    ax.set_xlabel(r"$\phi$", labelpad=-8)
-    ax.set_ylabel(r"$\theta$", labelpad=-8)
+    ax.set_xlabel(r"$\phi$", labelpad=-12, fontsize=8)
+    ax.set_ylabel(r"$\theta$", labelpad=-12, fontsize=8)
     ax.set_xticks([0, 2 * np.pi])
     ax.set_xticklabels([r"$0$", r"$2\pi$"], fontsize=6)
     ax.set_yticks([0, np.pi])
