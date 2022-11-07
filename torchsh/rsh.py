@@ -19,7 +19,10 @@ def rsh_cart_0(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,1) real spherical harmonics projections of input.
+        rsh: (N,...,1) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
 
     return torch.stack(
@@ -41,7 +44,10 @@ def rsh_cart_1(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,4) real spherical harmonics projections of input.
+        rsh: (N,...,4) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
     x = xyz[..., 0]
     y = xyz[..., 1]
@@ -69,7 +75,10 @@ def rsh_cart_2(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,9) real spherical harmonics projections of input.
+        rsh: (N,...,9) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
     x = xyz[..., 0]
     y = xyz[..., 1]
@@ -109,7 +118,10 @@ def rsh_cart_3(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,16) real spherical harmonics projections of input.
+        rsh: (N,...,16) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
     x = xyz[..., 0]
     y = xyz[..., 1]
@@ -156,7 +168,10 @@ def rsh_cart_4(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,25) real spherical harmonics projections of input.
+        rsh: (N,...,25) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
     x = xyz[..., 0]
     y = xyz[..., 1]
@@ -217,7 +232,10 @@ def rsh_cart_5(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,36) real spherical harmonics projections of input.
+        rsh: (N,...,36) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
     x = xyz[..., 0]
     y = xyz[..., 1]
@@ -289,7 +307,10 @@ def rsh_cart_6(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,49) real spherical harmonics projections of input.
+        rsh: (N,...,49) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
     x = xyz[..., 0]
     y = xyz[..., 1]
@@ -380,7 +401,10 @@ def rsh_cart_7(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,64) real spherical harmonics projections of input.
+        rsh: (N,...,64) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
     x = xyz[..., 0]
     y = xyz[..., 1]
@@ -524,7 +548,10 @@ def rsh_cart_8(xyz: torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,81) real spherical harmonics projections of input.
+        rsh: (N,...,81) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     """
     x = xyz[..., 0]
     y = xyz[..., 1]

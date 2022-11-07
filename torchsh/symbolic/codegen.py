@@ -53,7 +53,10 @@ def rsh_cart_${degree}(xyz:torch.Tensor):
         xyz: (N,...,3) tensor of points on the unit sphere
 
     Returns:
-        rsh: (N,...,${(degree+1)**2}) real spherical harmonics projections of input.
+        rsh: (N,...,${(degree+1)**2}) real spherical harmonics
+            projections of input. Ynm is found at index
+            `n*(n+1) + m`, with `0 <= n <= degree` and
+            `-n <= m <= n`.
     '''
 % if degree > 0:
     x = xyz[...,0]
