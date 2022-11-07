@@ -22,7 +22,7 @@ $$
 and
 
 $$
-\left\lVert \frac{\partial\mathbf{r}}{\partial\theta}\times\frac{\partial\mathbf{r}}{\partial\phi} \right\rVert = \sin\theta. \lVert
+\left\lVert \frac{\partial\mathbf{r}}{\partial\theta}\times\frac{\partial\mathbf{r}}{\partial\phi} \right\rVert = \sin\theta. \left\lVert x \right\lVert
 $$
 
 ## Usage
