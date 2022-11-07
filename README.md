@@ -26,7 +26,7 @@ $$
 $$
 
 $$
-\left\lVert \frac{\partial\mathbf{r}}{\partial\theta} \right\lVert = \sin\theta.
+\left\lVert {\frac{\partial\mathbf{r}}{\partial\theta}} \right\lVert = \sin\theta.
 $$
 
 ## Usage
