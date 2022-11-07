@@ -37,7 +37,7 @@ import torch
 import torchsh
 
 xyz = ... # tensor (N,...,3) of points on the unit-sphere
-sh = torchsh.rsh_cart_3(xyz) # tensor (N,...,16) of Ynm
+ynm = torchsh.rsh_cart_3(xyz) # tensor (N,...,16) of Ynm
 ```
 
 This relies on pre-generated RSH functions, which `torchsh` contains up to degree 8. They follow the the naming convention `rsh_cart_{degree}`.
