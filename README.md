@@ -5,6 +5,14 @@ Real spherical harmonics (RSH) in Cartesian form for PyTorch. The resulting sour
 The following plot shows the first real spherical harmonics $Y_{nm}$ of degree $n < 6$ and order $-n \le m \le n$ as a function of polar coordinates $\theta \in [0,\pi]$ and $\phi \in [0,2\pi]$.
 ![](etc/rsph_theta_phi.png?raw=true)
 
+## Properties
+
+The RSH functions provided in this package are ortho-normalized over the surface of the unit sphere. That is
+
+$$
+\int\limits_0^\pi\int\limits_0^{2\pi}Y_{nm}(\theta,\phi)Y_{n'm'}(\theta,\phi)\sin\theta\,d\phi\,d\theta = \delta_{ll'}\delta_{mm'}.
+$$
+
 ## Usage
 
 To compute all $Y_{nm}$ values up to degree 3 use:
