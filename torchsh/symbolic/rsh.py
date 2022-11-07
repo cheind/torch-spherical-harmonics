@@ -18,6 +18,7 @@ enough so that they become simple functions of x,y,z respectively.
 References:
     - https://en.wikipedia.org/wiki/Spherical_harmonics#Separated_Cartesian_form
     - http://en.citizendium.org/wiki/Solid_harmonics#In_total
+    - https://www.osti.gov/pages/servlets/purl/1172304
 """
 
 
