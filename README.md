@@ -42,7 +42,7 @@ ynm = torchsh.rsh_cart_3(xyz) # tensor (N,...,16) of Ynm values
 
 This relies on pre-generated RSH functions, which `torchsh` contains up to degree 8. They follow the the naming convention `rsh_cart_{degree}`.
 
-If you do not want to include a new library, you may just as well just include [`torchsh/rsh.py`](./torchsh/rsh.py) in your project, which requires only `torch` to be installed.
+If you do not want to add a new library dependency, you may just as well just include [`torchsh/rsh.py`](./torchsh/rsh.py) in your project, which requires only `torch` to be installed.
 
 ## Code Generation
 
