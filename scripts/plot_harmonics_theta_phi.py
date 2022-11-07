@@ -75,6 +75,14 @@ def main():
             img = plot_Y_theta_phi(ax, Y, n, m, next(idx))
 
     plt.colorbar(img, cax=plt.subplot(spec[:, -1]), orientation="vertical")
+    plt.figtext(
+        0.5,
+        0.025,
+        "https://github.com/cheind/torch-spherical-harmonics",
+        ha="center",
+        fontsize=8,
+        fontfamily="monospace",
+    )
     fig.savefig("etc/rsph_theta_phi.svg", facecolor="white")
     fig.savefig("etc/rsph_theta_phi.png", facecolor="white", dpi=200)
     plt.show()

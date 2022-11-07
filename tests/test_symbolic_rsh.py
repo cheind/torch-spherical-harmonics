@@ -40,3 +40,6 @@ def test_symbolic_rsh(n: int, m: int):
     # Seems like sympy has an additional phase?
     # https://passthrough.fw-notify.net/download/284744/https://cs.dartmouth.edu/wjarosz/publications/dissertation/appendixB.pdf
     assert_allclose(abs(sh), abs(sh_ref), atol=1e-5)
+
+
+# sym.integrate(f2*f2*sym.sin(theta),(phi,0,2*sym.pi), (theta,0,sym.pi))

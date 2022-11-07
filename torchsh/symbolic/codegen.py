@@ -132,7 +132,6 @@ def generate_source(ynm_instr: list[list[int]], degrees: list[int]) -> str:
 def compile_fn(degree: int) -> Callable[[torch.Tensor], torch.Tensor]:
     instr = generate_instructions_ynm(max_degree=degree)
     source = generate_source(instr, degrees=[degree])
-    print(source)
     ctx = {}
     exec(source, ctx)
     return ctx[f"rsh_cart_{degree}"]
