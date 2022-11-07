@@ -25,6 +25,8 @@ $$
 \left\lVert \frac{\partial\mathbf{r}}{\partial\theta} \times \frac{\partial\mathbf{r}}{\partial\phi} \right\lVert = \sin\theta.
 $$
 
+Note that due to some rendering issue, you might not see the double vertical bars around the cross product.
+
 ## Usage
 
 To compute all $Y_{nm}$ values up to degree 3 use:
