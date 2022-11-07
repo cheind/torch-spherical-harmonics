@@ -62,7 +62,7 @@ def P(n: int, m: int, z: sym.Symbol) -> sym.Expr:
     return scale * sym.Sum(f, (k, 0, upper))
 
 
-def Ylm(n: int, m: int, x: sym.Symbol, y: sym.Symbol, z: sym.Symbol) -> sym.Expr:
+def Ynm(n: int, m: int, x: sym.Symbol, y: sym.Symbol, z: sym.Symbol) -> sym.Expr:
     """Return a symbolic expression for the real spherical
     harmonics having degree `l` and order `m`."""
     assert abs(m) <= n
@@ -73,10 +73,3 @@ def Ylm(n: int, m: int, x: sym.Symbol, y: sym.Symbol, z: sym.Symbol) -> sym.Expr
     else:
         f = sym.sqrt((2 * n + 1) / (2 * sym.pi)) * P(n, m, z) * A(m, x, y)
     return f.doit().simplify()
-
-
-if __name__ == "__main__":
-
-    ylm = Ylm(1, -1, x, y, z)
-    print(y)
-    print((ylm - (sym.sqrt(3 / (4 * sym.pi)) * y)).simplify())

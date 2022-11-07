@@ -1,6 +1,6 @@
 from typing import Callable
 import torch
-from .rsh import Ylm
+from .rsh import Ynm
 
 try:
     import sympy as sym
@@ -110,7 +110,7 @@ def generate_instructions_ynm(
     for n in range(start_degree, max_degree + 1):
         level = []
         for m in range(-n, n + 1):
-            ylm = Ylm(n, m, x, y, z)
+            ylm = Ynm(n, m, x, y, z)
             ylmstr = sym.pycode(_substitute(sym.N(ylm)))
             if n == 0:
                 ylmstr = f"xyz.new_tensor({ylmstr}).expand(xyz.shape[:-1])"
