@@ -34,10 +34,11 @@ To compute all $Y_{nm}$ values up to degree 3 use:
 ```python
 
 import torch
-import torchsh
+from torchsh import rsh_cart_3
 
-xyz = ... # tensor (N,...,3) of points on the unit-sphere
-ynm = torchsh.rsh_cart_3(xyz) # tensor (N,...,16) of Ynm values
+xyz = ...             # tensor (N,...,3) of unit-sphere points
+ynm = rsh_cart_3(xyz) # tensor (N,...,16) of Ynm values
+                      # with Ynm at index `n*(n+1) + m`
 ```
 
 This relies on pre-generated RSH functions, which `torchsh` contains up to degree 8. They follow the the naming convention `rsh_cart_{degree}`.
