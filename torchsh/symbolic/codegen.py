@@ -151,8 +151,12 @@ if __name__ == "__main__":
         help="Output filename. If not given, prints to stdout",
         default=None,
     )
-    parser.add_argument("--max-degree", help="Maximum degree to generate", default=8)
-    parser.add_argument("--min-degree", help="Minimum degree to generate", default=0)
+    parser.add_argument(
+        "--max-degree", help="Maximum degree to generate", default=8, type=int
+    )
+    parser.add_argument(
+        "--min-degree", help="Minimum degree to generate", default=0, type=int
+    )
     args = parser.parse_args()
 
     instr = generate_instructions_ynm(max_degree=args.max_degree)
